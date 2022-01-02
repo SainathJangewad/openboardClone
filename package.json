@@ -1,0 +1,23 @@
+{
+  "name": "openboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SainathJangewad/openboardClone.git"
+  },
+  "author": "sainath jangewad",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SainathJangewad/openboardClone/issues"
+  },
+  "homepage": "https://github.com/SainathJangewad/openboardClone#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "socket.io": "^4.4.0"
+  }
+}

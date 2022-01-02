@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" >
+    <title> openboard clone</title>
+</head>
+<body>
+    <div class="options-container">
+      <i class="fas fa-bars"></i>
+    </div>
+
+
+    <div class="tools-container scal-tools">
+        
+        <div class="pencil">
+            <i class="fas fa-pencil-alt "></i>
+        </div>
+        <div class="eraser">
+            <i class="fas fa-eraser"></i>
+        </div>
+        <div class="download">
+         <i class="fas fa-download "></i>
+        </div>
+        <div class="upload">
+        <i class="fas fa-upload"></i>
+        </div>
+        <div class="redo">
+          <i class="fas fa-redo"></i>
+        </div>
+        <div class="undo">
+       <i class="fas fa-undo"></i>
+        </div>
+        <div class="sticky-note">
+            <i class="fas fa-sticky-note "></i>
+        </div>
+        
+    </div>
+     <div class="pencil-tool-container">
+         <div class="pencil-width-container">
+             <input type="range" name="" min="3" max="10" id="" value="3" class="pencil-width">
+            </div>
+            <div class="pencil-tool-color-container">
+                <div class="black pencil-color"></div>
+                <div class="red pencil-color"></div>
+                <div class="yellow pencil-color"></div>
+            </div>
+        </div>
+        
+        <div class="eraser-container">
+          <input type="range" class="eraser-input eraser-width" min="3" max="10" id="" value="3" >
+          
+      </div>
+      <canvas> </canvas>
+      <script src="https://cdn.socket.io/3.1.3/socket.io.min.js" integrity="sha384-cPwlPLvBTa3sKAgddT6krw0cJat7egBga3DJepJyrLl4Q9/5WLra3rrnMcyTyOnh" crossorigin="anonymous"></script>
+     
+      <script> 
+            let socket = io.connect('http://localhost:3000')
+    </script>
+
+      <script src="all.js"></script>
+      <script src="tools.js"></script>
+      <script src="canvas.js"></script>
+</body>
+</html>
