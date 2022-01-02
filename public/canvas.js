@@ -19,7 +19,6 @@ let undoRedoTracker = [];
 let trackIdx = 0;
 
 canvas.addEventListener('mousedown',(e)=>{
-    // beginPath({x:e.clientX,y:e.clientY});
     mousedown = true;
     let data = {x:e.clientX,y:e.clientY};
     socket.emit('beginPath',data);
@@ -48,9 +47,8 @@ undo.addEventListener('click',(e)=>{
         undoRedoTracker
     }
     socket.emit('redoundo', data);
-    // undoRedoFunc();
-})
-//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    })
+
 redo.addEventListener('click',(e)=>{
     if(trackIdx < undoRedoTracker.length-1){
         trackIdx++;
@@ -60,7 +58,6 @@ redo.addEventListener('click',(e)=>{
         undoRedoTracker
     }
     socket.emit('redoundo', data);
-    //  undoRedoFunc();
 })
 
 function undoRedoFunc(trackObj){
@@ -97,10 +94,9 @@ function changePencilColor(pencilColorObj){
     tool.strokeStyle = color;
     currentPencilColor = color;
 }
-//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 
 pencilWidth.addEventListener('change',(e)=>{
-    // tool.lineWidth = pencilWidth.value;
-    // currentPencilWidth = pencilWidth.value;
+   
     let data =  {
         width:pencilWidth.value,
         currPencilWidth:pencilWidth.value
@@ -114,10 +110,9 @@ function changePencilWidth(pencilWidthObj){
     tool.lineWidth = width;
     currentPencilWidth = currPencilWidth;
 }
-
-//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  
 eraserWidth.addEventListener('change',(e)=>{
-    // tool.lineWidth = eraserWidth.value;
+    
     width = eraserWidth.value;
      let data = {width}
      socket.emit('eraserWidth',data);
@@ -128,9 +123,7 @@ function changeEraserWidth(eraserObj){
     tool.lineWidth = width;
     
 }
-
-//-------------------------------------------------------------------------------------------------------------------------------------
-
+ 
 eraser.addEventListener('click',(e)=>{
     let data = {
         eraserFlag
@@ -147,8 +140,8 @@ function colorAndWidth(eraserObj){
            tool.strokeStyle = currentPencilColor;
            tool.lineWidth = currentPencilWidth;
        }
-}
-//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+} 
+
 downoad.addEventListener('click',(e)=>{
     let url = canvas.toDataURL();
     let a = document.createElement('a');
